@@ -1,0 +1,186 @@
+/* Barra de contacto y logo */
+.contact-bar {
+    background-color: #4b5463;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.logo img {
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 20px #6080ae);
+    transition: filter 0.3s ease;
+}
+
+.logo span {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.logo small {
+    display: block;
+    font-family: Arial;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.contact-info {
+    display: flex;
+    gap: 300px; /* Espacio en pantallas grandes */
+    align-items: center;
+    color: #eeeeee;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    color: #eeeeee;
+}
+
+.contact-item img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.contact-item span {
+    font-size: 16px;
+    color: #eeeeee;
+}
+
+/* Menú de navegación */
+.main-nav {
+    background-color: #6081ad;
+    padding: 1px;
+    padding-right: 500px;
+    position: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: auto;
+    overflow: auto;
+}
+
+.slider {
+    position: relative;
+    width: 100vw; /* Hace que el slider ocupe todo el ancho de la ventana */
+    height: 100vh; /* Hace que el slider ocupe toda la altura de la ventana */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área del slide sin distorsión */
+    display: block;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-btn {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+input[type="radio"] {
+    display: none; /* Oculta los inputs de radio */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: flex-start; /* Alinea a la izquierda */
+        gap: 10px; /* Reduce el espacio entre elementos */
+    }
+
+    .contact-bar {
+        justify-content: flex-start; /* Alinea todo a la izquierda */
+        padding: 10px; /* Reduce el padding en móviles */
+    }
+
+    .logo {
+        padding-left: 100px; /* Reduce el padding en móviles */
+    }
+
+    .logo img {
+        height: 80px; /* Ajusta el tamaño del logo */
+        width: 80px;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center; /* Centra horizontalmente */
+    }}

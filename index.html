@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casas en Venta</title>
+    <link rel="stylesheet" href="casatio.css">
+    <style>
+        /* Estilos para el botón de cerrar */
+        #close-menu {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* Oculto por defecto */
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        /* Barra de contacto y logo */
+        .contact-bar {
+            background-color: #4b5463;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .logo img {
+            height: 80px;
+            width: 80px;
+            margin-right: 10px;
+            filter: drop-shadow(0 0 10px #6080ae);
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            color: #eeeeee;
+        }
+
+        /* Menú de navegación */
+        .main-nav {
+            background-color: #6081ad;
+            padding: 10px;
+            position: relative;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Slider */
+        .slider {
+            position: relative;
+            width: 100vw;
+            height: 100vh; /* Ocupa toda la altura de la pantalla */
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+        }
+
+        .slides img {
+            width: 100vw; /* Asegura que cubre todo el ancho de la pantalla */
+            height: 100vh; /* Asegura que cubre toda la altura de la pantalla */
+            object-fit: cover; /* Hace que la imagen cubra todo el área sin deformarse */
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-btn {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        /* Radio inputs for slider */
+        #slide1:checked ~ .slides {
+            transform: translateX(0);
+        }
+        #slide2:checked ~ .slides {
+            transform: translateX(-100%);
+        }
+        #slide3:checked ~ .slides {
+            transform: translateX(-200%);
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Estilos móviles */
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .logo img {
+                height: 60px;
+                width: 60px;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                background-color: #6081ad;
+                height: 100%;
+                width: 70%;
+                max-width: 300px;
+                padding-top: 20px;
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+
+            .main-nav ul.open {
+                right: 0;
+            }
+
+            .hamburger {
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            .hamburger span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                margin: 5px 0;
+            }
+
+            #close-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-bar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo de la inmobiliaria">
+            <span>SIRI<br><small>CONSTRUCT</small></span>
+        </div>
+        <div class="contact-info">
+            <div class="contact-item">
+                <img src="telefono.png" alt="Teléfono">
+                <span>Teléfono:<br> 2 234 065 | 2 555 392</span>
+            </div>
+            <div class="contact-item">
+                <img src="correo.png" alt="Correo electrónico">
+                <span>Correo electrónico:<br> siriconstruc@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <img src="direccion.png" alt="Dirección">
+                <span>Dirección:<br> Whymper N29-33 y Orellana, Quito – Ecuador</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="#">INICIO</a></li>
+            <li><a href="#">NUESTROS PROYECTOS</a></li>
+            <li><a href="#">SOBRE NOSOTROS</a></li>
+            <li><a href="#">GARANTÍAS</a></li>
+            <li><a href="#">CONTÁCTANOS</a></li>
+        </ul>
+        <button id="close-menu">Cerrar</button>
+    </nav>
+
+    <div class="slider">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+
+        <div class="slides">
+            <div class="slide">
+                <img src="image1.jpg" alt="Imagen 1">
+            </div>
+            <div class="slide">
+                <img src="image2.jpg" alt="Imagen 2">
+            </div>
+            <div class="slide">
+                <img src="image3.jpg" alt="Imagen 3">
+            </div>
+        </div>
+
+        <div class="caption">
+            <h2>Casas de la mejor calidad</h2>
+            <p>al mejor precio para ti</p>
+        </div>
+
+        <div class="navigation">
+            <label for="slide1" class="nav-btn"></label>
+            <label for="slide2" class="nav-btn"></label>
+            <label for="slide3" class="nav-btn"></label>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.main-nav ul');
+        const closeMenuButton = document.getElementById('close-menu');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.add('open');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            menu.classList.remove('open');
+        });
+    </script>
+</body>
+</html>
