@@ -5,190 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casas en Venta</title>
     <link rel="stylesheet" href="casatio.css">
-    <style>
-        /* Estilos para el botón de cerrar */
-        #close-menu {
-            background-color: #ff4444;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: none; /* Oculto por defecto */
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 1000;
-        }
-
-        /* Barra de contacto y logo */
-        .contact-bar {
-            background-color: #4b5463;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            padding-left: 20px;
-        }
-
-        .logo img {
-            height: 80px;
-            width: 80px;
-            margin-right: 10px;
-            filter: drop-shadow(0 0 10px #6080ae);
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            color: #eeeeee;
-        }
-
-        /* Menú de navegación */
-        .main-nav {
-            background-color: #6081ad;
-            padding: 10px;
-            position: relative;
-        }
-
-        .main-nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .main-nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Slider */
-        .slider {
-            position: relative;
-            width: 100vw;
-            height: 100vh; /* Ocupa toda la altura de la pantalla */
-            overflow: hidden;
-        }
-
-        .slides {
-            display: flex;
-            height: 100%;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .slide {
-            min-width: 100%;
-            height: 100%;
-        }
-
-        .slides img {
-            width: 100vw; /* Asegura que cubre todo el ancho de la pantalla */
-            height: 100vh; /* Asegura que cubre toda la altura de la pantalla */
-            object-fit: cover; /* Hace que la imagen cubra todo el área sin deformarse */
-        }
-
-        .caption {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-        }
-
-        .navigation {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .nav-btn {
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-
-        /* Radio inputs for slider */
-        #slide1:checked ~ .slides {
-            transform: translateX(0);
-        }
-        #slide2:checked ~ .slides {
-            transform: translateX(-100%);
-        }
-        #slide3:checked ~ .slides {
-            transform: translateX(-200%);
-        }
-
-        input[type="radio"] {
-            display: none;
-        }
-
-        /* Estilos móviles */
-        @media (max-width: 768px) {
-            .contact-info {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .logo img {
-                height: 60px;
-                width: 60px;
-            }
-
-            .main-nav ul {
-                flex-direction: column;
-                align-items: flex-start;
-                position: fixed;
-                top: 0;
-                right: -100%;
-                background-color: #6081ad;
-                height: 100%;
-                width: 70%;
-                max-width: 300px;
-                padding-top: 20px;
-                transition: right 0.3s ease;
-                z-index: 1000;
-            }
-
-            .main-nav ul.open {
-                right: 0;
-            }
-
-            .hamburger {
-                display: inline-block;
-                cursor: pointer;
-            }
-
-            .hamburger span {
-                display: block;
-                width: 25px;
-                height: 3px;
-                background-color: #fff;
-                margin: 5px 0;
-            }
-
-            #close-menu {
-                display: block;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="contact-bar">
@@ -212,22 +28,30 @@
         </div>
     </div>
 
+    <!-- Menú de navegación -->
     <nav class="main-nav">
-        <div class="hamburger">
+        <!-- Botón hamburguesa -->
+        <button id="menu-toggle" aria-label="Abrir menú">
             <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        </button>
+    
+        <!-- Menú -->
         <ul>
-            <li><a href="#">INICIO</a></li>
-            <li><a href="#">NUESTROS PROYECTOS</a></li>
-            <li><a href="#">SOBRE NOSOTROS</a></li>
-            <li><a href="#">GARANTÍAS</a></li>
-            <li><a href="#">CONTÁCTANOS</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
         </ul>
-        <button id="close-menu">Cerrar</button>
+
+        <ulu>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ulu>
     </nav>
 
+    <!-- Slider -->
     <div class="slider">
         <input type="radio" name="slider" id="slide1" checked>
         <input type="radio" name="slider" id="slide2">
@@ -257,18 +81,16 @@
         </div>
     </div>
 
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const menu = document.querySelector('.main-nav ul');
-        const closeMenuButton = document.getElementById('close-menu');
+    <!-- Script para el menú hamburguesa -->
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('.main-nav ul');
 
-        hamburger.addEventListener('click', () => {
-            menu.classList.add('open');
-        });
-
-        closeMenuButton.addEventListener('click', () => {
-            menu.classList.remove('open');
-        });
-    </script>
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show'); // Alterna la clase "show"
+    });
+</script>
 </body>
 </html>
+
+
