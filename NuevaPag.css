@@ -24,6 +24,7 @@ header {
   top: 0;
   z-index: 1000;
   flex-wrap: wrap;
+  border-radius: 1em;
 }
 
 nav {
@@ -49,6 +50,7 @@ nav a:hover {
   border: none;
   color: white;
   cursor: pointer;
+  
 }
 
 .glass-box {
@@ -61,6 +63,7 @@ nav a:hover {
   text-align: center;
   max-width: 600px;
   color: #fff;
+  
 }
 
 .services {
@@ -87,6 +90,7 @@ footer {
   background: rgba(255, 255, 255, 0.05);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
+  
 }
 
 .spacer {
@@ -133,6 +137,8 @@ footer {
   padding: 0.5rem 1rem;
   cursor: pointer;
   backdrop-filter: blur(10px);
+  
+  
 }
 
 .nav:hover {
@@ -152,12 +158,14 @@ footer {
 @media (max-width: 768px) {
   .slider {
     max-width: 100%;
+    
   }
 
   .nav {
     font-size: 1.5rem;
     padding: 0.5rem;
     transition: transform 0.5s ease-in-out;
+    border-radius: 1em;
   }
   
 }
@@ -165,6 +173,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  
 }
   .logo-container:hover {
   transition: transform 0.3s ease-in-out;
@@ -178,16 +187,16 @@ footer {
   height: 70px; /* ajusta según tu logo */
   width: auto;
   transform: scale(1.2);
+  
 }
 
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
-
     nav {
     position: fixed;
-     top: 120px; /* ← AQUÍ defines qué tan abajo comienza el menú */
+    top: 120px; /* ← AQUÍ defines qué tan abajo comienza el menú */
     right: -250px; /* oculto fuera de pantalla */
     background: rgba(0, 0, 0, 0.9);
     flex-direction: column;
@@ -207,6 +216,7 @@ footer {
     margin: 1rem 0;
     width: 100%;
     font-size: 1.2rem;
+    
   }
 
   .menu-toggle {
