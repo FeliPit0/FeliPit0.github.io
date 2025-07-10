@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="NuevaPag.css">
+  <title>SIRI construct</title>
+</head>
+<body>
+
+  <header>
+  <div class="logo-container">
+    <img src="logo.png" alt="Logo" />
+    <h1>SIRI <br> Construct</h1>
+  </div>
+
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+
+  <nav id="nav-menu">
+    <a href="#">Inicio</a>
+    <a href="#">Servicios</a>
+    <a href="#">Contacto</a>
+  </nav>
+  </header>
+
+  <div class="spacer"></div>
+
+
+  <section class="slider">
+    <div class="slider-container">
+      <img src="image1.jpg" alt="Imagen 1" />
+      <img src="image2.jpg" alt="Imagen 2" />
+      <img src="image3.jpg" alt="Imagen 3" />
+    </div>
+    <button class="nav prev">&#10094;</button>
+    <button class="nav next">&#10095;</button>
+  </section>
+
+  <section class="services">
+    <div class="service-card">
+      <h3>Servicio 1</h3>
+      <p>Descripción breve de tu servicio.</p>
+    </div>
+    <div class="service-card">
+      <h3>Servicio 2</h3>
+      <p>Otra descripción de tus servicios destacados.</p>
+    </div>
+    <div class="service-card">
+      <h3>Servicio 3</h3>
+      <p>Contenido atractivo para tus visitantes.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Siri Construct. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const slider = document.querySelector('.slider-container');
+    const images = document.querySelectorAll('.slider-container img');
+    const total = images.length;
+    let index = 0;
+
+    // Cambio automático cada 5 segundos
+    setInterval(() => {
+      index = (index + 1) % total;
+      updateSlider();
+    }, 5000); // 5000ms = 5 segundos
+
+    // Cambio con botones de navegación
+    document.querySelector('.next').addEventListener('click', () => {
+      index = (index + 1) % total;
+      updateSlider();
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      index = (index - 1 + total) % total;
+      updateSlider();
+    });
+
+    // Función para mover el slider
+    function updateSlider() {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+  const toggleButton = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  toggleButton.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    toggleButton.classList.toggle('active');
+    toggleButton.textContent = navMenu.classList.contains('show') ? '✖' : '☰';
+  });
+
+  // Opcional: cerrar menú al hacer clic en cualquier enlace
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+      toggleButton.classList.remove('active');
+      toggleButton.textContent = '☰';
+    });
+  });
+  </script>
+</body>
+</html>
