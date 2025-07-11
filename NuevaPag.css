@@ -107,6 +107,7 @@ footer {
   overflow: hidden;
   border-radius: 1em;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  border-radius: 1em;
 }
 
 .slider-container {
@@ -116,6 +117,7 @@ footer {
   margin-top: 16px;
   border-radius: 1em;
   transition: transform 0.5s ease-in-out;
+  border-radius: 1em;
 }
 
 .slider-container img {
@@ -124,6 +126,7 @@ footer {
   border-radius: 1em;
   object-fit: cover; /* Rellena el espacio sin deformar */
   flex-shrink: 0; /* Evita que se compriman */
+  border-radius: 1em;
 }
 
 .nav {
@@ -137,13 +140,12 @@ footer {
   padding: 0.5rem 1rem;
   cursor: pointer;
   backdrop-filter: blur(10px);
-  
-  
 }
 
 .nav:hover {
   background-color: rgba(0, 0, 0, 0.3);
   transition: transform 0.5s ease-in-out;
+  
 }
 
 .prev {
@@ -152,6 +154,90 @@ footer {
 
 .next {
   right: 10px;
+}
+
+
+.servicios-info {
+  background-color: #1f3763; /* azul oscuro similar al de la imagen */
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.servicios-info .subtitulo {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #cfd8dc;
+  margin-bottom: 1rem;
+}
+
+.servicios-info h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tarjetas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.tarjeta {
+  max-width: 300px;
+  text-align: center;
+}
+
+.tarjeta img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1rem;
+}
+.tarjeta {
+  max-width: 300px;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.tarjeta h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta p {
+  font-size: 0.95rem;
+  color: #d6e0f0;
+}
+
+.trayectoria {
+  font-size: 0.8rem;
+  color: #ccc;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.años {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.servicios-info {
+  background: rgb(74, 84, 102);
+  border-top: 1px solid rgba(150, 131, 255, 0.267);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.05);
 }
 
 /* Responsive para dispositivos móviles */
@@ -169,10 +255,11 @@ footer {
   }
   
 }
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    
   
 }
   .logo-container:hover {
@@ -189,6 +276,23 @@ footer {
   transform: scale(1.2);
   
 }
+
+.tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjeta {
+    width: 90%;
+  }
+
+  .servicios-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .años {
+    font-size: 1.3rem;
+  }
 
 @media (max-width: 768px) {
   .menu-toggle {
@@ -221,5 +325,15 @@ footer {
 
   .menu-toggle {
     display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 60vh; /* o prueba 50vh si aún se ve muy grande */
+  }
+
+  .slider-container img {
+    height: 60vh;
   }
 }
