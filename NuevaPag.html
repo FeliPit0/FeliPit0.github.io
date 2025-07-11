@@ -36,14 +36,41 @@
     <button class="nav next">&#10095;</button>
   </section>
 
+  <section class="servicios-info">
+    <p class="subtitulo">Enfoque técnico que abarca integralmente el proceso del negocio inmobiliario</p>
+    <h2>Ingeniería Inmobiliaria</h2>
+
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <img src="icono1.png" alt="Crédito" />
+        <h3>Asesoramos tu Crédito</h3>
+        <p>Te apoyamos con el proceso de crédito para adquirir tu inmueble con las principales entidades financieras del país.</p>
+      </div>
+
+      <div class="tarjeta">
+        <img src="icono2.png" alt="Alta calidad" />
+        <h3>Proyectos de alta calidad</h3>
+        <p>Con más de 24 años de experiencia y más de 40 proyectos, queremos ser parte de tu sueño con calidad y transparencia.</p>
+      </div>
+
+      <div class="tarjeta">
+        <img src="icono3.png" alt="Garantía" />
+        <h3>Garantía Post-venta</h3>
+        <p>Durante los primeros 12 meses de uso de la vivienda, atendemos ajustes menores para garantizar tu satisfacción.</p>
+      </div>
+    </div>
+
+  <p class="trayectoria">CALIFICACIÓN DE RIESGO AAA</p>
+  <h2 class="años">24 AÑOS DE TRAYECTORIA, SOLIDEZ Y CONFIANZA</h2>
+</section>
   <section class="services">
     <div class="service-card">
       <h3>Servicio 1</h3>
-      <p>Descripción breve de tu servicio.</p>
+      <p>Somos una inmobiliaria dedicada a hacer la casa de tus sueños.</p>
     </div>
     <div class="service-card">
       <h3>Servicio 2</h3>
-      <p>Otra descripción de tus servicios destacados.</p>
+      <p>Comprometidos en el desarrollo de tu nueva casa.</p>
     </div>
     <div class="service-card">
       <h3>Servicio 3</h3>
@@ -83,21 +110,21 @@
       slider.style.transform = `translateX(-${index * 100}%)`;
     }
 
-  const toggleButton = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
+    const toggleButton = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-  toggleButton.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-    toggleButton.classList.toggle('active');
-    toggleButton.textContent = navMenu.classList.contains('show') ? '✖' : '☰';
-  });
+    toggleButton.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+      toggleButton.classList.toggle('active');
+      toggleButton.textContent = navMenu.classList.contains('show') ? '✖' : '☰';
+    });
 
-  // Opcional: cerrar menú al hacer clic en cualquier enlace
-  document.querySelectorAll('#nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('show');
-      toggleButton.classList.remove('active');
-      toggleButton.textContent = '☰';
+    // Opcional: cerrar menú al hacer clic en cualquier enlace
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+        toggleButton.classList.remove('active');
+        toggleButton.textContent = '☰';
     });
   });
   </script>
